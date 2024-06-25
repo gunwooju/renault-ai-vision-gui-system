@@ -1,0 +1,59 @@
+{
+    "info": {
+      "Image": [
+        {
+          "ImageName": "C:\\르노코리아 코딩연습\\자동차1\\르노 QM6 블루 자동차 라이트.jpg"
+        }
+      ],
+      "Model": [
+        {
+          "modelName": "D:\\TrainModel\\LJLHEV_1R1.net"
+        }
+      ],
+      "ObjectQuantity": [
+        {
+          "objectxQty": 2
+        }
+      ],
+      "Box ObjectAttribute0": [
+        {
+          "box_idx": 0,
+          "Classnumber": 1,
+          "CenterX": 120,
+          "CenterY": 78,
+          "Width": 50,
+          "Heigth": 70
+        }
+      ],
+      "Probability0": [
+        {
+          "ClassIndex": 0,
+          "Value": 0.1
+        },
+        {
+          "ClassIndex": 1,
+          "Value": 0.9
+        }
+      ],
+      "Box ObjectAttribute1": [
+        {
+          "box_idx": 1,
+          "Classnumber": 1,
+          "CenterX": 343,
+          "CenterY": 404,
+          "Width": 42,
+          "Heigth": 35
+        }
+      ],
+      "Probability1": [
+        {
+          "ClassIndex": 0,
+          "Value": 0.1
+        },
+        {
+          "ClassIndex": 1,
+          "Value": 0.9
+        }
+      ]
+    }
+  }

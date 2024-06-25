@@ -1,0 +1,121 @@
+{
+
+    "info": {
+  
+      "Image": [
+  
+        {
+  
+          "ImageName": "C:\\Renault code\\Real_Renault\\NUROCLE\\240531104418_LJLHEV_3R1_FC.jpg\n"
+  
+        }
+  
+      ],
+  
+      "Model": [
+  
+        {
+  
+          "modelName": "D:\\TrainModel\\LJLHEV_3R1_FC.nrfc",
+  
+          "modelType": "FLOWCHART"
+  
+        }
+  
+      ],
+  
+      "Model_0": [
+  
+        {
+  
+          "ModelType": "Detection",
+  
+          "ModelDepth": "0",
+  
+          "ObjectxQty": "1"
+  
+        }
+  
+      ],
+  
+      "BoxObjectAttribute_00": [
+  
+        {
+  
+          "box_idx": 0,
+  
+          "Classnumber": 1,
+  
+          "leftTopX": 14,
+  
+          "leftTopY": 30,
+  
+          "Width": 250,
+  
+          "Height": 150
+  
+        }
+  
+      ],
+  
+      "Probability_00": [
+  
+        {
+  
+          "ClassIndex": 0,
+  
+          "ClassName": "background",
+  
+          "Value": 3.07607536E-07
+  
+        },
+  
+        {
+  
+          "ClassIndex": 1,
+  
+          "ClassName": "D/lock",
+  
+          "Value": 0.9999997
+  
+        }
+  
+      ],
+  
+      "Model_1": {
+  
+        "ModelType": "Classification",
+  
+        "ModelDepth": "1",
+  
+        "ClassQty": 2
+  
+      },
+  
+      "Probability_10": [
+  
+        {
+  
+          "ClassIndex": 0,
+  
+          "ClassName": "OK",
+  
+          "Value": 1.0
+  
+        },
+  
+        {
+  
+          "ClassIndex": 1,
+  
+          "ClassName": "NG",
+  
+          "Value": 0.0
+  
+        }
+  
+      ]
+  
+   }
+  
+  }

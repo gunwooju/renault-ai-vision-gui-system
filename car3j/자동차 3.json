@@ -1,0 +1,59 @@
+{
+    "info": {
+      "Image": [
+        {
+          "ImageName": "C:\\르노코리아 코딩연습\\자동차3\\멋쟁이 자동차.jpg"
+        }
+      ],
+      "Model": [
+        {
+          "modelName": "D:\\TrainModel\\LJLHEV_1R1.net"
+        }
+      ],
+      "ObjectQuantity": [
+        {
+          "objectxQty": 2
+        }
+      ],
+      "Box ObjectAttribute0": [
+        {
+          "box_idx": 0,
+          "Classnumber": 1,
+          "CenterX": 70,
+          "CenterY": 88,
+          "Width": 31,
+          "Heigth": 75
+        }
+      ],
+      "Probability0": [
+        {
+          "ClassIndex": 0,
+          "Value": 0.1
+        },
+        {
+          "ClassIndex": 1,
+          "Value": 0.9
+        }
+      ],
+      "Box ObjectAttribute1": [
+        {
+          "box_idx": 1,
+          "Classnumber": 1,
+          "CenterX": 123,
+          "CenterY": 74,
+          "Width": 43,
+          "Heigth": 37
+        }
+      ],
+      "Probability1": [
+        {
+          "ClassIndex": 0,
+          "Value": 0.1
+        },
+        {
+          "ClassIndex": 1,
+          "Value": 0.9
+        }
+      ]
+    }
+  }

@@ -1,0 +1,87 @@
+{
+
+    "info": {
+  
+      "Image": [
+  
+        {
+  
+          "ImageName": "C:\\Renault code\\Real_Renault\\NUROCLE\\240531104340_HZG_1R3_D.jpg\n"
+  
+        }
+  
+      ],
+  
+      "Model": [
+  
+        {
+  
+          "modelName": "D:\\TrainModel\\HZG_1R3_D.net",
+  
+          "modelType": "DETECTION"
+  
+        }
+  
+      ],
+  
+      "Model_0": [
+  
+        {
+  
+          "ModelType": "Detection",
+  
+          "ModelDepth": "0",
+  
+          "ObjectxQty": "1"
+  
+        }
+  
+      ],
+  
+      "BoxObjectAttribute_00": [
+  
+        {
+  
+          "box_idx": 0,
+  
+          "Classnumber": 1,
+  
+          "leftTopX": 266,
+  
+          "leftTopY": 251,
+  
+          "Width": 190,
+  
+          "Height": 270
+  
+        }
+  
+      ],
+  
+      "Probability_00": [
+  
+        {
+  
+          "ClassIndex": 0,
+  
+          "ClassName": "background",
+  
+          "Value": 2.40335271E-06
+  
+        },
+  
+        {
+  
+          "ClassIndex": 1,
+  
+          "ClassName": "BOLT",
+  
+          "Value": 0.9999976
+  
+        }
+  
+      ]
+  
+    }
+  
+  }

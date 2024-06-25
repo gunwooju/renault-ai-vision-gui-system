@@ -1,0 +1,131 @@
+{
+
+    "info": {
+  
+      "Image": [
+  
+        {
+  
+          "ImageName": "C:\\Renault code\\Real_Renault\\NUROCLE\\240531104428_LJLHEV_1R1_D.jpg\n"
+  
+        }
+  
+      ],
+  
+      "Model": [
+  
+        {
+  
+          "modelName": "D:\\TrainModel\\LJLHEV_1R1_D.net",
+  
+          "modelType": "DETECTION"
+  
+        }
+  
+      ],
+  
+      "Model_0": [
+  
+        {
+  
+          "ModelType": "Detection",
+  
+          "ModelDepth": "0",
+  
+          "ObjectxQty": "2"
+  
+        }
+  
+      ],
+  
+      "BoxObjectAttribute_00": [
+  
+        {
+  
+          "box_idx": 0,
+  
+          "Classnumber": 1,
+  
+          "leftTopX": 101,
+  
+          "leftTopY": 199,
+  
+          "Width": 200,
+  
+          "Height": 300
+  
+        }
+  
+      ],
+  
+      "Probability_00": [
+  
+        {
+  
+          "ClassIndex": 0,
+  
+          "ClassName": "background",
+  
+          "Value": 7.089022E-05
+  
+        },
+  
+        {
+  
+          "ClassIndex": 1,
+  
+          "ClassName": "BOLT;",
+  
+          "Value": 0.99992913
+  
+        }
+  
+      ],
+  
+      "BoxObjectAttribute_01": [
+  
+        {
+  
+          "box_idx": 1,
+  
+          "Classnumber": 1,
+  
+          "leftTopX": 743,
+  
+          "leftTopY": 942,
+  
+          "Width": 250,
+  
+          "Height": 350
+  
+        }
+  
+      ],
+  
+      "Probability_01": [
+  
+        {
+  
+          "ClassIndex": 0,
+  
+          "ClassName": "background",
+  
+          "Value": 0.000725707738
+  
+        },
+  
+        {
+  
+          "ClassIndex": 1,
+  
+          "ClassName": "BOLT;",
+  
+          "Value": 0.9
+  
+        }
+  
+      ]
+  
+    }
+  
+  }

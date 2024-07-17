@@ -1,4 +1,4 @@
-#연습중.py(24.06.18)
+#연습중.py(24.07.03)-ng 우선 표시
 import matplotlib
 matplotlib.use('Agg')  # 백엔드 변경
 import os
@@ -526,10 +526,10 @@ folder_paths = [
 #id no 기준으로 가져오기
 def get_max_trim_redboximage_names():
     """
-    MSSQL 데이터베이스에서 'Id' 열 값이 가장 높은 행의 'Id', 'redboximage_name' 및 'ModelName' 열 값을 가져오는 함수.
-    동일한 'Id' 값이 있을 경우 각 행의 'Id','redboximage_name' 및 'ModelName' 값을 모두 반환.
+    MSSQL 데이터베이스에서 'Id' 열 값이 가장 높은 행의 'Id', 'redboximage_name', 'ModelName' 및 'decide' 열 값을 가져오는 함수.
+    동일한 'Id' 값이 있을 경우 각 행의 'Id', 'redboximage_name', 'ModelName' 및 'decide' 값을 모두 반환.
     
-    :return: (Id, redboximage_names, model_names)의 튜플
+    :return: (Id, redboximage_names, model_names, decides)의 튜플
     """
     # 데이터베이스 연결 설정
     server = '주건우의노트북'
@@ -547,19 +547,33 @@ def get_max_trim_redboximage_names():
     conn = pyodbc.connect(connection_string)
     cursor = conn.cursor()
 
-    # "id" 열 값이 가장 높은 행들의 "redboximage_name" 및 "ModelName" 열 값 가져오기
+    # 현재 시간 기준으로 3시간 이내의 데이터 중 'decide' 열 데이터가 'ng'인 데이터 우선 가져오기
     query = f"""
-        SELECT Id, redboximage_name, ModelName
+        SELECT Id, redboximage_name, ModelName, decide
         FROM {table}
-        WHERE Id = (SELECT MAX(Id) FROM {table})
+        WHERE DATEDIFF(hour, DetectedAt, GETDATE()) <= 3 AND decide = 'ng'
+        ORDER BY Id ASC
     """
     cursor.execute(query)
+    ng_results = cursor.fetchall()
+
+    # 만약 'ng' 데이터가 없다면, Id가 가장 높은 데이터를 가져옴
+    if not ng_results:
+        query = f"""
+            SELECT Id, redboximage_name, ModelName, decide
+            FROM {table}
+            WHERE Id = (SELECT MAX(Id) FROM {table})
+        """
+        cursor.execute(query)
+        results = cursor.fetchall()
+    else:
+        results = ng_results
 
     # 결과 가져오기
-    result = cursor.fetchall()
-    max_id = [row[0] for row in result]  # 첫 번째 열은 Id 값입니다.
-    redboximage_names = [row[1] for row in result]
-    model_names = [row[2] for row in result]
+    max_id = [row[0] for row in results]
+    redboximage_names = [row[1] for row in results]
+    model_names = [row[2] for row in results]
+    decides = [row[3] for row in results]
 
     # 데이터베이스 연결 종료
     cursor.close()
@@ -576,9 +590,7 @@ def get_max_trim_redboximage_names():
         else:
             modified_model_names.append(name)
 
-    return max_id, redboximage_names, modified_model_names
-
-
+    return max_id, redboximage_names, modified_model_names, decides
 
 # 왼쪽 섹션 추가
 left_side = dbc.Col([ 
@@ -654,7 +666,7 @@ left_side = dbc.Col([
      Input('interval-component', 'n_intervals')]
 )
 def update_output(rows, cols, n_intervals):
-    _, redboximage_names, _  = get_max_trim_redboximage_names()  # redboximage_names만 가져옴
+    _, redboximage_names, _, _ = get_max_trim_redboximage_names()  # redboximage_names만 가져옴
 
     # 박스 스타일 설정
     box_style = {
@@ -691,17 +703,18 @@ def update_output(rows, cols, n_intervals):
 )
 # update_frame_box 함수 수정
 def update_frame_box(n_intervals):
-    _, _, model_names = get_max_trim_redboximage_names()  # model_names를 가져옴
+    _, _, model_names, _ = get_max_trim_redboximage_names()  # model_names를 가져옴
     if model_names:
         return html.Div(f"ModelName: {model_names[-1]}", style={'font-size': '20px', 'font-weight': 'bold', 'text-align': 'center'})  # 텍스트 크기, 굵기, 가운데 정렬 지정
     else:
         return ""
+
 @app.callback(
     Output('trim-box', 'children'),
     [Input('interval-component', 'n_intervals')]
 )
 def update_trim_box(n_intervals):
-    max_id, _, _ = get_max_trim_redboximage_names()  # 'max_id' 데이터를 가져옴
+    max_id, _, _, _ = get_max_trim_redboximage_names()  # 'max_id' 데이터를 가져옴
 
     if max_id:
         return html.Div(f"trim No: {max_id[-1]}", style={'font-size': '20px', 'font-weight': 'bold', 'text-align': 'center'})

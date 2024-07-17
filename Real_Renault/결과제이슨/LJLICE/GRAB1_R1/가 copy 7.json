@@ -1,0 +1,131 @@
+{
+
+    "info": {
+  
+      "Image": [
+  
+        {
+  
+          "ImageName": "C:\\Renault code\\Real_Renault\\NUROCLE\\240625155122_LJLICE_1R1_D.jpg\n"
+  
+        }
+  
+      ],
+  
+      "Model": [
+  
+        {
+  
+          "modelName": "D:\\TrainModel\\LJLICE_1R1_D.net",
+  
+          "modelType": "DETECTION"
+  
+        }
+  
+      ],
+  
+      "Model_0": [
+  
+        {
+  
+          "ModelType": "Detection",
+  
+          "ModelDepth": "0",
+  
+          "ObjectxQty": "2"
+  
+        }
+  
+      ],
+  
+      "BoxObjectAttribute_00": [
+  
+        {
+  
+          "box_idx": 0,
+  
+          "Classnumber": 1,
+  
+          "leftTopX": 757,
+  
+          "leftTopY": 965,
+  
+          "Width": 400,
+  
+          "Height": 500
+  
+        }
+  
+      ],
+  
+      "Probability_00": [
+  
+        {
+  
+          "ClassIndex": 0,
+  
+          "ClassName": "background",
+  
+          "Value": 3.17918034E-06
+  
+        },
+  
+        {
+  
+          "ClassIndex": 1,
+  
+          "ClassName": "BOLT;",
+  
+          "Value": 0.9999968
+  
+        }
+  
+      ],
+  
+      "BoxObjectAttribute_01": [
+  
+        {
+  
+          "box_idx": 1,
+  
+          "Classnumber": 1,
+  
+          "leftTopX": 109,
+  
+          "leftTopY": 225,
+  
+          "Width": 300,
+  
+          "Height": 267
+  
+        }
+  
+      ],
+  
+      "Probability_01": [
+  
+        {
+  
+          "ClassIndex": 0,
+  
+          "ClassName": "background",
+  
+          "Value": 0.0006002848
+  
+        },
+  
+        {
+  
+          "ClassIndex": 1,
+  
+          "ClassName": "BOLT;",
+  
+          "Value": 0.9993997
+  
+        }
+  
+      ]
+  
+    }
+  
+  }
